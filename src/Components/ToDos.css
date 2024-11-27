@@ -1,0 +1,142 @@
+.paginations {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    left: 60%;
+    transform: translateX(-50%);
+    z-index: 999;
+
+}
+
+.paginations span {
+    margin: 0 10px;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.paginations button {
+    margin: 0 5px;
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #263043;
+    color: white;
+    cursor: pointer;
+}
+
+.paginations button.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.paginations button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* .posts-containers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    margin-top: 30px;
+    margin-right: 20px;
+}
+
+.cards {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    transition: transform 0.3s ease-in-out;
+    margin-left: 30px;
+}
+
+.cards h2 {
+    background-color: #1d2634;
+    font-size: 14px;
+    border-bottom: none;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.cards:hover {
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.cards p {
+    color: #333;
+} */
+
+
+
+.posts-containers {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+    margin-top: 50px; 
+    margin-left: 40px;
+  }
+  
+  .cards {
+    background-color: #fff; 
+    color: #333;
+    padding: 20px; 
+    border: 2px solid #ddd; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    text-align: left; 
+    width: 91%; 
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .title{
+    text-transform: uppercase;
+    cursor: pointer;
+
+  }
+  
+  .cards:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+  }
+  
+  h2 {
+    margin: 0 0 10px 0; 
+    font-size: 18px;
+    font-weight: bold; 
+  }
+  
+  p {
+    margin: 0;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  
+
+@media (max-width: 768px) {
+    .posts-containers {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 10px;
+        margin: 20px;
+    }
+
+    .cards {
+        margin-left: 0;
+        width: 100%;
+    }
+}

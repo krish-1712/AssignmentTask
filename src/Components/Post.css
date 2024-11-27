@@ -1,0 +1,317 @@
+/* .posts-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid #3498db;
+  }
+  
+  .posts-table th {
+    background-color: #3498db;
+    color: black;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .posts-table th:first-child {
+    border-top-left-radius: 8px;
+  }
+  
+  .posts-table th:last-child {
+    border-top-right-radius: 8px;
+  }
+  
+  .posts-table td {
+    border-bottom: 1px solid #ddd;
+    padding: 12px;
+    text-transform: uppercase;
+    color: black;
+  }
+  
+  .posts-table tr:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+  }
+  
+  .posts-table td button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+  }
+  
+  .posts-table td button:hover {
+    background-color: #ddd;
+    
+  }
+  
+  .posts-table td button.get {
+    background-color: #27ae60;
+    color: white;
+  }
+  
+  .posts-table td button.delete {
+    background-color: #c0392b;
+  
+  }
+  
+  .delete {
+    margin-left: 20px;
+  }
+  
+  .modal-header {
+    background-color: #1d2634;
+    font-size: 10px;
+    border-bottom: none;
+    text-transform: uppercase;
+  }
+  
+  .modal-header .btn-close {
+    background-color: white;
+    margin-bottom: 30px;
+  }
+  
+  .title {
+    font-size: 20px;
+  }
+  
+  .close_icon {
+    margin-top: 20px;
+  }
+  
+  .save_icon {
+    width: 140px;
+  }
+  
+  .modal-body {
+    padding: 20px;
+    background-color: #f7f7f7;
+  }
+  
+  .modal-body textarea {
+    width: 100%;
+    height: 200px;
+    resize: vertical;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .modal-footer {
+    background-color: #1d2634;
+    border-top: none;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .modal-footer button {
+    padding: 8px 16px;
+    background-color: #fff;
+    color: #f76c6c;
+    border: 1px solid #f76c6c;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+  }
+  
+  .modal-footer button:hover {
+    background-color: #f76c6c;
+    color: white;
+  }
+  
+  .edit-icon,
+  .delete-icon {
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .edit-icon:hover {
+    color: green;
+    transform: scale(1.2);
+  }
+  
+  .delete-icon:hover {
+    color: #ff4500;
+    transform: scale(1.2);
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    left: 60%;
+    transform: translateX(-50%);
+    z-index: 999;
+  }
+  
+  .pagination span {
+    margin: 0 10px;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .pagination button {
+    margin: 0 5px;
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #263043;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .pagination button.active {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .pagination button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  } */
+
+
+
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    height: 100vh;
+        color: white;
+  }
+  
+  .posts-table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color:white; /* Dark table background */
+    margin-top: 80px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .posts-table th,
+  .posts-table td {
+    padding: 12px 15px;
+    text-align: left;
+    color: #1e1e1e;
+    border-bottom: 1px solid #333;
+  }
+  
+  .posts-table th {
+    background-color: #263043;
+    color: #f8f8f8;
+    font-weight: bold;
+  }
+  
+  .posts-table tr:hover {
+    background-color: #33333353;
+    cursor: pointer;
+  }
+  
+  .edit-icon,
+  .delete-icon {
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .edit-icon:hover {
+    color: green;
+    transform: scale(1.2);
+  }
+
+  .delete-icon:hover {
+    color: red;
+    transform: scale(1.2);
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+
+  }
+  
+  .pagination button  {
+    margin: 0 5px;
+    padding: 8px 16px;
+    background-color: #292929;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 270px;
+  }
+  
+  .pagination button:hover {
+    background-color: #333;
+  }
+  
+  .pagination button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+  }
+
+
+  .pagination span {
+    margin: 0 10px;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    color: #333;
+    font-weight: bold;
+    margin-top: 270px;
+  }
+  
+  
+  textarea {
+    width: 100%;
+    background-color: #292929;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 4px;
+    padding: 10px;
+  }
+  
+  .modal-content {
+    background-color: #1e1e1e;
+    color: #fff;
+  }
+  
+  .close_icon,
+  .save_icon {
+    background-color: #292929;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+  }
+  
+  .close_icon:hover,
+  .save_icon:hover {
+    background-color: #333;
+  }
+  
+
+  
