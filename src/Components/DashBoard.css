@@ -251,6 +251,25 @@
   align-items: center;
 } */
 
+.styled-headings {
+  font-size: 30px;
+  color: #333;
+  margin-left: 50px;
+  font-weight: normal;
+  display: flex;  /* Flexbox for layout */
+  align-items: center;  /* Align items vertically */
+  font-family: 'Arial', sans-serif;
+}
+
+.styled-headings .icon {
+  margin-right: 10px;  /* Space between the icon and text */
+  font-size: 35px;  /* Larger size for the icon */
+  color: #ff6b81;  /* Pink color for the icon */
+}
+
+
+
+
 .usernames {
   font-size: 1rem;
   font-weight: bold;

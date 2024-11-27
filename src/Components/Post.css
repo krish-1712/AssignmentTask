@@ -76,10 +76,7 @@
     margin-bottom: 30px;
   }
   
-  .title {
-    font-size: 20px;
-  }
-  
+c
   .close_icon {
     margin-top: 20px;
   }
@@ -187,8 +184,21 @@
     cursor: not-allowed;
   } */
 
-
-
+  .styled-heading {
+    color: #333;
+    font-size: 32px;
+    font-weight: bold;
+    margin-left: 50px;
+    padding-bottom: 15px;  /* More space at the bottom */
+    font-family: 'Georgia', serif;  /* Elegant serif font */
+    text-transform: uppercase;  /* Uppercase text for a stronger impact */
+    letter-spacing: 2px;  /* Increased letter spacing */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Soft box shadow for depth */
+  }
+  
+  Modal{
+    background-color: #263043;
+  }
 
   .grid-container {
     display: grid;
@@ -202,7 +212,7 @@
     margin: 20px auto;
     border-collapse: collapse;
     background-color:white; /* Dark table background */
-    margin-top: 80px;
+    margin-top: 40px;
     border-radius: 8px;
     overflow: hidden;
   }
@@ -295,22 +305,32 @@
   }
   
   .modal-content {
-    background-color: #1e1e1e;
+    background-color: #263043;
     color: #fff;
   }
   
-  .close_icon,
-  .save_icon {
-    background-color: #292929;
+  .close_icon {
+    background-color: red;  /* Red background for close button */
     color: #fff;
     border: none;
     padding: 10px 16px;
     border-radius: 4px;
   }
   
-  .close_icon:hover,
+  .save_icon {
+    background-color: green;  /* Green background for save button */
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+  }
+  
+  .close_icon:hover {
+    background-color: darkred;  /* Darker red on hover for close */
+  }
+  
   .save_icon:hover {
-    background-color: #333;
+    background-color: darkgreen;  /* Darker green on hover for save */
   }
   
 

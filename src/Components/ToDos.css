@@ -1,4 +1,5 @@
 .paginations {
+  
     display: flex;
     justify-content: center;
     align-items: center;
@@ -84,11 +85,24 @@
 
 
 
+.styled-heading {
+    color: #333;
+    font-size: 32px;
+    font-weight: bold;
+    margin-left: 50px;
+    padding-bottom: 15px;  /* More space at the bottom */
+    font-family: 'Georgia', serif;  /* Elegant serif font */
+    text-transform: uppercase;  /* Uppercase text for a stronger impact */
+    letter-spacing: 2px;  /* Increased letter spacing */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Soft box shadow for depth */
+  }
+  
+
+
 .posts-containers {
     display: flex;
     flex-direction: column;
     gap: 15px; 
-    margin-top: 70px; 
     margin-left: 40px;
 
   }
@@ -125,8 +139,9 @@
     font-size: 16px;
     cursor: pointer;
   }
-  
-  
+  .pages{
+    margin-top: 40px;
+  }
 
 @media (max-width: 768px) {
     .posts-containers {

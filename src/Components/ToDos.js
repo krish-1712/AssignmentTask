@@ -52,7 +52,7 @@ const ToDos = () => {
       <Sidebar />
       <div>
         <div className="posts-containers">
-        {/* <h4 style={{color:"black", marginTop:"30px"}}>TODOS</h4> */}
+        <h4 className="styled-heading">TODOS</h4>
           {currentTodos.map((todo) => (
             <div className="cards" key={todo.id}>
               <h2 className='title'> {todo.title}</h2>
@@ -60,7 +60,7 @@ const ToDos = () => {
             </div>
           ))}
         </div>
-        <div className="pagination-container">
+        <div className="pagination-container pages">
   <button onClick={prevPage} disabled={currentPage === 1}>
     <FaChevronLeft />
   </button>

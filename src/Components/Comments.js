@@ -48,7 +48,7 @@ const Comments = () => {
     <div className='grid-container'>
     <Sidebar />
     <div>
-    {/* <h4 style={{color:"black", marginTop:"30px"}}>COMMENTS</h4> */}
+    <h4 className="styled-heading">COMMENTS</h4>
       <div className="posts-container">
         {currentComments.map((comment) => (
           <div className="card" key={comment.id}>

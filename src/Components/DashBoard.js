@@ -246,10 +246,7 @@ const DashBoard = () => {
   const todosCount = todos.length;
 
 
-  const handleLogout = () => {
-    console.log("User logged out.");
-    window.location.href = "/login";
-  };
+
 
   return (
     <div className='dashboard-container'>
@@ -261,7 +258,7 @@ const DashBoard = () => {
           <div className='header-left'> 
             <div className='user-info'>
             <header className="dashboard-header-bar">
-        <h1></h1>
+            <h4 className="styled-headings">DASHBOARD</h4>
         <div >
         <Link to="/" className="text">
           <BsPersonCircle className="profile-icons" />
@@ -286,19 +283,25 @@ const DashBoard = () => {
 
         <div className='card-container'>
           <div className='stat-card'>
+          <Link to="/post" >
             <RiArticleLine className='card-icon' />
             <h4>Posts</h4>
             <p>{postsCount}</p>
+            </Link>
           </div>
           <div className='stat-card'>
+          <Link to="/comments" >
             <MdComment className='card-icon' />
             <h4>Comments</h4>
             <p>{commentsCount}</p>
+            </Link>
           </div>
           <div className='stat-card'>
+          <Link to="/todos" >
             <BsCardChecklist className='card-icon' />
             <h4>To Do</h4>
             <p>{todosCount}</p>
+            </Link>
           </div>
         </div>
 

@@ -158,7 +158,8 @@ const Post = () => {
 
   
   <div>
-  {/* <h4 style={{color:"black", marginTop:"30px"}}>POST</h4> */}
+  <h4 className="styled-heading">POST</h4>
+
     <table className="posts-table">
       <thead>
         <tr>

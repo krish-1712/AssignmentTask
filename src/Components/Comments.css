@@ -125,8 +125,23 @@
 
   box-sizing: border-box;
 
-
 }
+
+.styled-heading {
+  color: #333;
+  font-size: 32px;
+  font-weight: bold;
+  margin-left: 50px;
+  padding-bottom: 15px;  /* More space at the bottom */
+  font-family: 'Georgia', serif;  /* Elegant serif font */
+  text-transform: uppercase;  /* Uppercase text for a stronger impact */
+  letter-spacing: 2px;  /* Increased letter spacing */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Soft box shadow for depth */
+}
+
+
+
+
 
 /* Individual card styling */
 .card {
@@ -154,7 +169,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px 0;
   gap: 10px;
 }
 
