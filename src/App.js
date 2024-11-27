@@ -7,28 +7,25 @@ import Comments from './Components/Comments';
 import ToDos from './Components/ToDos';
 import SessionContext from './Components/SessionContext';
 import React, { useState } from 'react';
-
-
-
+import UserDetails from "./Components/UserDetails";
 export const url = 'https://jsonplaceholder.typicode.com'
 
 function App() {
   const [userContent, setUserContent] = useState("");
 
   return (
-    <SessionContext.Provider value={{userContent, setUserContent}}>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/dashboard" element={<DashBoard />} />
-        <Route path="/post" element={<Post />} />
-        <Route path="/sidebar" element={<Sidebar />} />
-        <Route path="/comments" element={<Comments />} />
-        <Route path="/todos" element={<ToDos />} />
-
-  
-      </Routes>
-    </BrowserRouter>
+    <SessionContext.Provider value={{ userContent, setUserContent }}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/dashboard" element={<DashBoard />} />
+          <Route path="/post" element={<Post />} />
+          <Route path="/sidebar" element={<Sidebar />} />
+          <Route path="/comments" element={<Comments />} />
+          <Route path="/todos" element={<ToDos />} />
+          <Route path="/user" element={<UserDetails />} />
+        </Routes>
+      </BrowserRouter>
     </SessionContext.Provider>
   );
 }
