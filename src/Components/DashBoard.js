@@ -245,16 +245,30 @@ const DashBoard = () => {
   const commentsCount = comments.length;
   const todosCount = todos.length;
 
+
+  const handleLogout = () => {
+    console.log("User logged out.");
+    window.location.href = "/login";
+  };
+
   return (
     <div className='dashboard-container'>
+     
       <Sidebar/>
+      
       <main className='main-dashboard'>
         <div className='dashboard-header'>
           <div className='header-left'> 
             <div className='user-info'>
-               <h4>{user?.name}</h4>
-              {/* <p>{user?.email}</p>  */}
-              {/* <h4>DASHBOARD</h4> */}
+            <header className="dashboard-header-bar">
+        <h1></h1>
+        <div >
+        <Link to="/" className="text">
+          <BsPersonCircle className="profile-icons" />
+          <span className="usernames" >{user?.name || 'Guest'}</span>
+          </Link>
+        </div>
+      </header>
             </div>
           </div>
            

@@ -151,7 +151,7 @@ import { BsGrid1X2Fill, BsPersonCircle } from 'react-icons/bs';
 import { FaRegNewspaper } from 'react-icons/fa';
 import { AiOutlineMessage } from 'react-icons/ai';
 import { MdAssignment } from 'react-icons/md';
-import { FiMenu } from 'react-icons/fi';
+import { FaSignOutAlt } from "react-icons/fa";
 
 function Sidebar() {
   const [user, setUser] = useState(null); 
@@ -173,19 +173,19 @@ function Sidebar() {
   return (
     <div className={`sidebar-container ${isOpen ? 'expanded' : 'collapsed'}`}>
    
-      <button
+      {/* <button
         className="sidebar-toggle"
         onClick={() => setIsOpen((prev) => !prev)}
         aria-label="Toggle Sidebar"
       >
         <FiMenu size={24} />
-      </button>
+      </button> */}
 
      
       <aside className="sidebar">
      
         <div className="sidebar-brand">
-          <p>ARBAAN</p>
+          <p style={{marginLeft:"50px"}}>ARBAAN</p>
         </div>
        
 
@@ -215,15 +215,24 @@ function Sidebar() {
               <span className="text">ToDos</span>
             </Link>
           </li>
+          <li className="sidebar-list-items ">
+            <Link to="/" className="sidebar-link">
+            <FaSignOutAlt className="icon" />
+              <span className="text">Logout</span>
+            </Link>
+          </li>
+   
         </ul>
 
+        
+
         {/* User Information */}
-        <div className="sidebar-footer">
+        {/* <div className="sidebar-footer">
         <Link to="/" className="text">
           <BsPersonCircle className="profile-icon" />
-          {/* <span className="username">{user?.name || 'Guest'}</span> */}
+          <span className="username">{user?.name || 'Guest'}</span>
           </Link>
-        </div>
+        </div> */}
       </aside>
     </div>
   );

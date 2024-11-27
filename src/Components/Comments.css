@@ -1,4 +1,4 @@
-.grid-container {
+/* .grid-container {
     display: grid;
     grid-template-columns: 250px auto;
     grid-template-rows: auto;
@@ -107,4 +107,76 @@
   .pagination-container button:disabled {
     opacity: 0.6;
     cursor: not-allowed;
-  }
+  } */
+
+
+
+  /* Grid container to align sidebar and content */
+/* .grid-container {
+  display: flex;
+} */
+
+/* Posts container with vertical alignment */
+.posts-container {
+  display: flex;
+  flex-direction: column; /* Align cards vertically */
+  gap: 20px; /* Add spacing between cards */
+  padding: 20px;
+
+  box-sizing: border-box;
+
+
+}
+
+/* Individual card styling */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+  font-size: 18px;
+  margin: 0 0 10px;
+  color: #333;
+}
+
+.card p {
+  font-size: 14px;
+  color: #555;
+  margin: 5px 0;
+}
+
+/* Pagination container styles */
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  gap: 10px;
+}
+
+.pagination-container button {
+  background-color: #263043;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.pagination-container button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+.pagination-container span {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}

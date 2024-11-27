@@ -3,8 +3,7 @@ import axios from 'axios';
 import { url } from '../App';
 import Sidebar from './Sidebar';
 import './ToDos.css';
-import { BsPersonCircle }
-  from 'react-icons/bs'
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa"; 
 import { Link } from 'react-router-dom';
 import  sessionContext from './SessionContext';
 
@@ -13,7 +12,7 @@ import  sessionContext from './SessionContext';
 const ToDos = () => {
   const [todos, setToDos] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [todosPerPage] = useState(3);
+  const [todosPerPage] = useState(5);
   const {userContent} = useContext(sessionContext);
 
 
@@ -61,16 +60,15 @@ const ToDos = () => {
             </div>
           ))}
         </div>
-        <div className="paginations">
-          <button onClick={prevPage} disabled={currentPage === 1}>
-            Prev
-          </button>
-          <span>{currentPage}</span>
-          <button onClick={nextPage} disabled={currentPage === maxPage}>
-            Next
-          </button>
-
-        </div>
+        <div className="pagination-container">
+  <button onClick={prevPage} disabled={currentPage === 1}>
+    <FaChevronLeft />
+  </button>
+  <span>{currentPage}</span>
+  <button onClick={nextPage} disabled={currentPage === maxPage}>
+    <FaChevronRight />
+  </button>
+</div>
       </div>
     </div>
   );

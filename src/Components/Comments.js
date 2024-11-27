@@ -3,15 +3,14 @@ import axios from 'axios';
 import './Comments.css';
 import { url } from '../App';
 import Sidebar from './Sidebar';
-import { BsPersonCircle }
-  from 'react-icons/bs'
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import  sessionContext from './SessionContext';
 
 const Comments = () => {
     const [comments, setComments] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [commentsPerPage] = useState(6);
+    const [commentsPerPage] = useState(4);
     const {userContent} = useContext(sessionContext);
   
     useEffect(() => {
@@ -48,7 +47,7 @@ const Comments = () => {
   return (
     <div className='grid-container'>
     <Sidebar />
-    <div style={{marginTop:"50px"}}>
+    <div>
     {/* <h4 style={{color:"black", marginTop:"30px"}}>COMMENTS</h4> */}
       <div className="posts-container">
         {currentComments.map((comment) => (
@@ -60,14 +59,14 @@ const Comments = () => {
         ))}
       </div>
       <div className="pagination-container">
-        <button onClick={prevPage} disabled={currentPage === 1}>
-          Prev
-        </button>
-        <span>{currentPage}</span>
-        <button onClick={nextPage} disabled={currentPage === maxPage}>
-          Next
-        </button>
-      </div>
+  <button onClick={prevPage} disabled={currentPage === 1}>
+    <FaChevronLeft />
+  </button>
+  <span>{currentPage}</span>
+  <button onClick={nextPage} disabled={currentPage === maxPage}>
+    <FaChevronRight />
+  </button>
+</div>
     </div>
   </div>
   )

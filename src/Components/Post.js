@@ -5,8 +5,7 @@ import { url } from '../App';
 import { Modal, Button } from 'react-bootstrap';
 import Sidebar from './Sidebar';
 import { MdEdit, MdDelete } from 'react-icons/md';
-import { BsPersonCircle }
-    from 'react-icons/bs'
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import  sessionContext from './SessionContext';
 
@@ -18,7 +17,7 @@ const Post = () => {
     const [showModal, setShowModal] = useState(false);
     const [editedBody, setEditedBody] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage] = useState(6);
+    const [postsPerPage] = useState(10  );
     const {userContent} = useContext(sessionContext);
 
     
@@ -181,7 +180,7 @@ const Post = () => {
         ))}
       </tbody>
     </table>
-    <div className="pagination-container">
+    {/* <div className="pagination-container">
       <button onClick={prevPage} disabled={currentPage === 1}>
         Prev
       </button>
@@ -189,7 +188,24 @@ const Post = () => {
       <button onClick={nextPage} disabled={currentPage === maxPage}>
         Next
       </button>
-    </div>
+    </div> */}
+
+<div className="pagination-container">
+  <button onClick={prevPage} disabled={currentPage === 1}>
+    <FaChevronLeft />
+  </button>
+  <span>{currentPage}</span>
+  <button onClick={nextPage} disabled={currentPage === maxPage}>
+    <FaChevronRight />
+  </button>
+</div>
+
+
+
+
+
+
+
     <Modal show={showModal} onHide={() => setShowModal(false)}>
       <Modal.Header closeButton>
         <Modal.Title className="title">{selectedPost?.title}</Modal.Title>
