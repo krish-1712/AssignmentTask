@@ -30,8 +30,8 @@ const UserDetails = () => {
             <div className="user-details-container">
                 <div className="user-profile">
                     <div className="profile-info">
-                        <h2>{user?.name}</h2>
-                        <p>@{user?.username}</p>
+                        <h2 style={{marginLeft:"200px"}}>{user?.name}</h2>
+                        <p style={{marginLeft:"250px"}}>@{user?.username}</p>
                     </div>
                 </div>
 
