@@ -7,6 +7,7 @@ import Sidebar from './Sidebar';
 import { MdEdit, MdDelete } from 'react-icons/md';
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import sessionContext from './SessionContext';
+import { useNavigate } from 'react-router-dom';
 
 
 const Post = () => {
@@ -17,6 +18,14 @@ const Post = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(10);
   const { userContent } = useContext(sessionContext);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!userContent) {
+      navigate('/');
+      return;
+    }
+  }, [userContent, navigate]);
 
 
   useEffect(() => {

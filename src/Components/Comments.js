@@ -5,12 +5,22 @@ import { url } from '../App';
 import Sidebar from './Sidebar';
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import sessionContext from './SessionContext';
+import { useNavigate } from 'react-router-dom';
 
 const Comments = () => {
   const [comments, setComments] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [commentsPerPage] = useState(4);
   const { userContent } = useContext(sessionContext);
+  const navigate = useNavigate();
+
+
+  useEffect(() => {
+    if (!userContent) {
+      navigate('/');
+      return;
+    }
+  }, [userContent, navigate]);
 
   useEffect(() => {
     const fetchComments = async () => {

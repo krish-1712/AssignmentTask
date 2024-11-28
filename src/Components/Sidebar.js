@@ -18,9 +18,13 @@ function Sidebar() {
   const { userContent } = useContext(sessionContext);
   const navigate = useNavigate();
 
-  const handleClick = () => {
-    navigate('/');
-  };
+  useEffect(() => {
+    if (!userContent) {
+      navigate('/');
+      return;
+    }
+  }, [userContent, navigate]);
+
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -38,16 +42,15 @@ function Sidebar() {
     <>
       <header className="header">
 
-        <p style={{ marginRight: "1380px", marginTop: "20px" }}>ARBAAN</p>
-
-        <div onClick={handleClick} style={{ cursor: 'pointer' }}>
+        <p style={{ marginLeft: "20px", marginTop: "14px", fontWeight: '25px' }}>ARBAAN</p>
+        <span style={{ margin: '0 7px', fontSize: '18px', paddingTop: "10px" }}>|</span>
+        <div style={{ display: 'flex', marginLeft: "0", paddingTop: "3px" }}>
 
           <BsPersonCircle className="profile-icons" />
 
           <span className="usernames">{user?.name || 'Guest'}</span>
-          <h4 className="performance-title">Performance Overview</h4>
-        </div>
 
+        </div>
       </header>
       <div className="sidebar-container ">
         <aside className="sidebar">

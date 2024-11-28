@@ -29,6 +29,15 @@ const DashBoard = () => {
   };
 
   useEffect(() => {
+    if (!userContent) {
+      navigate('/');
+      return;
+    }
+  }, [userContent, navigate]);
+
+
+
+  useEffect(() => {
     const fetchData = async () => {
       try {
         const postsResponse = await axios.get(`${url}/users/${userContent}/posts`);

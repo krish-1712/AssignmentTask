@@ -5,12 +5,21 @@ import Sidebar from './Sidebar';
 import './ToDos.css';
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import sessionContext from './SessionContext';
+import { useNavigate } from 'react-router-dom';
 
 const ToDos = () => {
   const [todos, setToDos] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [todosPerPage] = useState(5);
   const { userContent } = useContext(sessionContext);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!userContent) {
+      navigate('/');
+      return;
+    }
+  }, [userContent, navigate]);
 
 
   useEffect(() => {

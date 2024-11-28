@@ -4,11 +4,21 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { url } from '../App';
 import sessionContext from './SessionContext';
+import { useNavigate } from 'react-router-dom';
 
 
 const UserDetails = () => {
     const [user, setUser] = useState([]);
     const { userContent } = useContext(sessionContext);
+    const navigate = useNavigate();
+
+
+    useEffect(() => {
+        if (!userContent) {
+            navigate('/');
+            return;
+        }
+    }, [userContent, navigate]);
 
     useEffect(() => {
         const fetchUserData = async () => {
@@ -30,8 +40,8 @@ const UserDetails = () => {
             <div className="user-details-container">
                 <div className="user-profile">
                     <div className="profile-info">
-                        <h2 style={{marginLeft:"200px"}}>{user?.name}</h2>
-                        <p style={{marginLeft:"250px"}}>@{user?.username}</p>
+                        <h2 style={{ marginLeft: "200px" }}>{user?.name}</h2>
+                        <p style={{ marginLeft: "250px" }}>@{user?.username}</p>
                     </div>
                 </div>
 
