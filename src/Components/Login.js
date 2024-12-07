@@ -9,6 +9,7 @@ import { useFormik } from 'formik';
 import sessionContext from './SessionContext';
 import { url } from '../App';
 
+
 const userSchemaValidation = yup.object({
   selectedOption: yup.string().notOneOf(['', 'Select a Name'], 'Please select a name').required('Name is required'),
 });
@@ -18,17 +19,17 @@ const Login = () => {
   const [users, setUsers] = useState([]);
   const { setUserContent } = useContext(sessionContext);
 
-  useEffect(() => {
-    axios.get(`${url}/users`)
-      .then((response) => {
-        toast.success(response.data.message);
-        setUsers(response.data);
-      })
-      .catch((error) => {
-        console.log('Error fetching users:', error);
-        toast.error(error.response.data.message);
-      });
-  }, []);
+    useEffect(() => {
+      axios.get(`${url}/users`)
+        .then((response) => {
+          toast.success(response.data.message);
+          setUsers(response.data);
+        })
+        .catch((error) => {
+          console.log('Error fetching users:', error);
+          toast.error(error.response.data.message);
+        });
+    }, []);
 
   const { handleSubmit, handleChange, errors, touched, values } = useFormik({
     initialValues: { selectedOption: '' },

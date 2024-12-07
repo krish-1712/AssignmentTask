@@ -48,6 +48,7 @@ const Post = () => {
       await axios.delete(`${url}/posts/${postId}`);
       const updatedPosts = posts.filter((post) => post.id !== postId);
       setPosts(updatedPosts);
+      setShowModal(false);
     } catch (error) {
       console.error('Error deleting post: ', error);
     }
@@ -56,6 +57,7 @@ const Post = () => {
   const handleGetPost = (post) => {
     setSelectedPost(post);
     setEditedBody(post.body);
+    console.log("clicked")
     setShowModal(true);
   };
 
@@ -94,10 +96,17 @@ const Post = () => {
             {currentPosts.map((post) => (
               <tr key={post.id} onClick={() => handleGetPost(post)}>
                 <td>{post.title}</td>
-                <td>
+                <td>  
                   <div>
-                    <MdEdit className="edit-icon" onClick={() => handleGetPost(post)} />
-                    <MdDelete className="delete-icon" onClick={() => handleDelete(post.id)} />
+                    <MdEdit className="edit-icon" onClick={(e) => {
+                      e.stopPropagation();
+                      handleGetPost(post);
+                    }} />
+
+                    <MdDelete className="delete-icon" onClick={(e) => {
+                      e.stopPropagation();
+                      handleDelete(post.id);
+                    }} />
                   </div>
                 </td>
               </tr>
