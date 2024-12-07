@@ -96,7 +96,7 @@ const Post = () => {
             {currentPosts.map((post) => (
               <tr key={post.id} onClick={() => handleGetPost(post)}>
                 <td>{post.title}</td>
-                <td>  
+                <td>
                   <div>
                     <MdEdit className="edit-icon" onClick={(e) => {
                       e.stopPropagation();
